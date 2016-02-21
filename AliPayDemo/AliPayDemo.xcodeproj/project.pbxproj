@@ -30,6 +30,7 @@
 		29BD24A31C79A68B00C51F72 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BD249B1C79A68B00C51F72 /* RSADataVerifier.m */; };
 		29BD24A61C79A8AF00C51F72 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29BD24A41C79A8AF00C51F72 /* AlipaySDK.bundle */; };
 		29BD24A71C79A8AF00C51F72 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BD24A51C79A8AF00C51F72 /* AlipaySDK.framework */; };
+		29BD24A91C79B24900C51F72 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BD24A81C79B24900C51F72 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		29BD249B1C79A68B00C51F72 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
 		29BD24A41C79A8AF00C51F72 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		29BD24A51C79A8AF00C51F72 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		29BD24A81C79B24900C51F72 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BD24A91C79B24900C51F72 /* SystemConfiguration.framework in Frameworks */,
 				29BD243D1C79A67E00C51F72 /* libssl.a in Frameworks */,
 				29BD243C1C79A67D00C51F72 /* libcrypto.a in Frameworks */,
 				29BD24A71C79A8AF00C51F72 /* AlipaySDK.framework in Frameworks */,
@@ -200,6 +203,7 @@
 		29BD23E51C79956A00C51F72 = {
 			isa = PBXGroup;
 			children = (
+				29BD24A81C79B24900C51F72 /* SystemConfiguration.framework */,
 				29BD23F01C79956B00C51F72 /* AliPayDemo */,
 				29BD240D1C79956B00C51F72 /* AliPayDemoTests */,
 				29BD24181C79956B00C51F72 /* AliPayDemoUITests */,
@@ -703,6 +707,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AliPayDemo/Classes/AliPay",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AliPayDemo/Classes/Alipay";
 				INFOPLIST_FILE = AliPayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -722,6 +727,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/AliPayDemo/Classes/AliPay",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AliPayDemo/Classes/Alipay";
 				INFOPLIST_FILE = AliPayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
