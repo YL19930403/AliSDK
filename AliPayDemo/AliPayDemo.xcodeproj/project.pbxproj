@@ -28,6 +28,8 @@
 		29BD24A11C79A68B00C51F72 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BD24971C79A68B00C51F72 /* openssl_wrapper.m */; };
 		29BD24A21C79A68B00C51F72 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BD24991C79A68B00C51F72 /* RSADataSigner.m */; };
 		29BD24A31C79A68B00C51F72 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BD249B1C79A68B00C51F72 /* RSADataVerifier.m */; };
+		29BD24A61C79A8AF00C51F72 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29BD24A41C79A8AF00C51F72 /* AlipaySDK.bundle */; };
+		29BD24A71C79A8AF00C51F72 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29BD24A51C79A8AF00C51F72 /* AlipaySDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		29BD24991C79A68B00C51F72 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		29BD249A1C79A68B00C51F72 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		29BD249B1C79A68B00C51F72 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		29BD24A41C79A8AF00C51F72 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		29BD24A51C79A8AF00C51F72 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 			files = (
 				29BD243D1C79A67E00C51F72 /* libssl.a in Frameworks */,
 				29BD243C1C79A67D00C51F72 /* libcrypto.a in Frameworks */,
+				29BD24A71C79A8AF00C51F72 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +270,8 @@
 		29BD24281C79964D00C51F72 /* AliPay */ = {
 			isa = PBXGroup;
 			children = (
+				29BD24A41C79A8AF00C51F72 /* AlipaySDK.bundle */,
+				29BD24A51C79A8AF00C51F72 /* AlipaySDK.framework */,
 				29BD243E1C79A68B00C51F72 /* openssl */,
 				29BD248A1C79A68B00C51F72 /* Util */,
 				29BD243A1C79A67D00C51F72 /* libcrypto.a */,
@@ -514,6 +521,7 @@
 			files = (
 				29BD24041C79956B00C51F72 /* LaunchScreen.storyboard in Resources */,
 				29BD24011C79956B00C51F72 /* Assets.xcassets in Resources */,
+				29BD24A61C79A8AF00C51F72 /* AlipaySDK.bundle in Resources */,
 				29BD23FC1C79956B00C51F72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +699,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AliPayDemo/Classes/AliPay",
+				);
 				INFOPLIST_FILE = AliPayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -706,6 +718,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AliPayDemo/Classes/AliPay",
+				);
 				INFOPLIST_FILE = AliPayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "Product.h"
 #import "Order.h"
+#import "DataSigner.h"
+#import <AlipaySDK/AlipaySDK.h>
+
 
 @interface ViewController ()
 @property(nonatomic,strong)NSArray * products ;
@@ -103,9 +106,21 @@
     NSString * orderSpec = [order description];
     
     //3.对订单进行签名加密
+        //3.1 对订单进行加密
+    id<DataSigner> signer = CreateRSADataSigner(privateKey);
+    NSString * signedString = [signer signString:orderSpec];
     
+        //3.2 将签名成功的字符串格式化为订单字符串
+     NSString *orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"", orderSpec, signedString, @"RSA"];
     
-    
+    //4. 打开支付宝客户端进行支付
+      /*
+          (若用户没有安装支付宝客户端)，会直接在应用程序中添加一个WebView，通过网页让用户进行支付，如果网页支付完成，那么会回调下面的callback，支付结果包含在resultDic中
+       （若用户安装了支护宝客户端），就会通过支付宝支付，支付完成会调用Appdelegate里面的代理方法 application: openURL:options:
+       */
+    [[AlipaySDK defaultService] payOrder:orderSpec fromScheme:@"jingdong" callback:^(NSDictionary *resultDic) {
+        
+    }];
 }
 
 @end
